@@ -15,18 +15,18 @@
 
 ### 3. Kết quả chính
 **Assets:**
-- 
-- 
+- Cơ sở dữ liệu thông tin khách hàng (tên, địa chỉ, số điện thoại, email)
+- Hệ thống xác thực và quản lý truy cập (tài khoản, mật khẩu, session token)
 
 **CIA mapping:**
-- Sự cố A -> 
-- Sự cố B -> 
-- Sự cố C -> 
+- Sự cố A -> Availability
+- Sự cố B -> Integrity
+- Sự cố C -> Confidentiality
 
 **Phân tích sự cố B:**
-- Threat: 
-- Vulnerability: 
-- Mitigation: 
+- Threat: Tin tặc khai thác lỗ hổng SQL Injection để thay đổi số dư tài khoản trái phép.
+- Vulnerability: Ứng dụng web không kiểm tra đầu vào người dùng; thiếu phân quyền ở mức hàng trong cơ sở dữ liệu.
+- Mitigation: Sử dụng truy vấn tham số hóa, áp dụng nguyên tắc least privilege, triển khai WAF và kiểm tra bảo mật mã nguồn định kỳ.
 
 ### 4. Kết luận ngắn
-(4-6 dòng: em học được gì từ bài lab này, phần nào khó nhất, điều gì cần chú ý khi phân tích một sự cố an toàn thông tin.)
+Qua bài lab này, em học được cách phân biệt rõ ba thành phần cốt lõi của bảo mật (CIA) và thấy rằng một sự cố có thể ảnh hưởng đến nhiều hơn một yếu tố. Phần khó nhất đối với em là xác định chính xác lỗ hổng (vulnerability) chứ không phải chỉ nêu ra mối đe dọa (threat) chung chung. Khi phân tích một sự cố an toàn thông tin, điều quan trọng là phải nhìn vào nguyên nhân gốc rễ về mặt kỹ thuật và quy trình, không chỉ dừng ở biểu hiện bên ngoài. Em cũng rút ra rằng giảm nhẹ rủi ro (mitigation) cần có giải pháp cụ thể, có thể đo lường được, không nên chỉ đưa ra lời khuyên chung như "tăng cường bảo mật".
